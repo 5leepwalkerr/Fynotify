@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: maxim277
+    url: jdbc:postgresql://localhost:5432/fynotify
+
+  flyway:
+    encoding: UTF-8
+  jooq:
+    sql-dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+  port: 8081
+

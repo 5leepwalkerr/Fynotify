@@ -14,17 +14,11 @@ spring:
     encoding: UTF-8
   jooq:
     sql-dialect: org.hibernate.dialect.PostgreSQLDialect
-  kafka:
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: group_id
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  rabbitmq:
+    host: localhost
+    username: polyakov
+    password: maxim277
 server:
-  port: 8081
+  port: 8080
+
 

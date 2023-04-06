@@ -16,33 +16,4 @@ public class FynotifyApplication {
     public static void main(String[] args) {
         SpringApplication.run(FynotifyApplication.class, args);
     }
-
-    @Bean
-    public Queue myQueue1(){
-        return new Queue("myQueue1");
-    }
-    @Bean
-    public Queue myQueue2(){
-        return new Queue("myQueue2");
-    }
-    @Bean
-    public FanoutExchange fanoutExchange(){
-        return new FanoutExchange("common-exchange");
-    }
-    @Bean
-    public DirectExchange directExchange(){
-        return new DirectExchange("direct-exchange");
-    }
-    @Bean
-    public Binding binding1(){
-        return BindingBuilder.bind(myQueue1()).to(directExchange()).with("error");
-    }
-    @Bean
-    public Binding binding2(){
-        return BindingBuilder.bind(myQueue2()).to(directExchange()).with("info");
-    }
-    @Bean
-    public Binding binding3(){
-        return BindingBuilder.bind(myQueue2()).to(directExchange()).with("warning");
-    }
 }

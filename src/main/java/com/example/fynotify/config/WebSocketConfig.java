@@ -1,9 +1,5 @@
 package com.example.fynotify.config;
 
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.NonFinal;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +9,6 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 @Log4j2
-@RequiredArgsConstructor
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
@@ -41,5 +36,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
                 .setRelayHost(host)
                 .setClientLogin(username)
                 .setClientPasscode(password);
+        config.setApplicationDestinationPrefixes("/app");
     }
 }

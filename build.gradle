@@ -20,14 +20,15 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.2'
+  //  implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.2'
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation('org.springframework.boot:spring-boot-starter-amqp:2.7.8')
+    implementation 'io.netty:netty5-all:5.0.0.Alpha3'
+    implementation 'io.projectreactor.netty:reactor-netty:1.1.5'
     implementation 'org.projectlombok:lombok'
-    implementation 'org.postgresql:postgresql'
+  //  implementation 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

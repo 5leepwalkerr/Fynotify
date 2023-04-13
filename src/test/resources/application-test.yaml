@@ -1,5 +1,5 @@
 flyway:
-    encoding: UTF-8
+  encoding: UTF-8
 server:
   port: 8081
 spring:

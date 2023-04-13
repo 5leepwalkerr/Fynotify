@@ -23,7 +23,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
     String password;
 
     public static final String TOPIC_DESTINATION_PREFIX = "/topic";
-    public static final String REGISTRY = "/websocket-test";
+    public static final String REGISTRY = "/websocketApp";
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry){
